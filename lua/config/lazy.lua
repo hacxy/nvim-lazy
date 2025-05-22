@@ -24,6 +24,8 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.formatting.prettier" },
     { import = "lazyvim.plugins.extras.coding.blink" },
     { import = "lazyvim.plugins.extras.lang.markdown" },
+    { import = "lazyvim.plugins.extras.editor.neo-tree" },
+    { import = "lazyvim.plugins.extras.coding.luasnip" },
 
     -- import/override with your plugins
     { import = "plugins" },

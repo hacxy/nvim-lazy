@@ -5,4 +5,5 @@
 vim.g.lazyvim_prettier_needs_config = true
 
 vim.g.root_spec = { "lsp", { ".git", "lua", "package.json" }, "cwd" }
+
 -- vim.g.root_spec = { "cwd" }

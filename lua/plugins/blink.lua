@@ -6,6 +6,9 @@ return {
   ---@module 'blink.cmp'
   ---@type blink.cmp.Config
   opts = {
+    snippets = {
+      preset = "luasnip",
+    },
     appearance = {
       -- sets the fallback highlight groups to nvim-cmp's highlight groups
       -- useful for when your theme doesn't support blink.cmp
@@ -15,11 +18,13 @@ return {
       -- adjusts spacing to ensure icons are aligned
       nerd_font_variant = "mono",
     },
+
     completion = {
+      list = { selection = { preselect = true, auto_insert = false } },
       accept = {
         -- experimental auto-brackets support
         auto_brackets = {
-          enabled = true,
+          enabled = false,
         },
       },
       menu = {
@@ -47,14 +52,21 @@ return {
     },
 
     cmdline = {
-      enabled = false,
+      enabled = true,
+      completion = { ghost_text = { enabled = true } },
+
+      keymap = {
+        preset = "inherit",
+        ["<C-J>"] = { "select_next", "fallback" },
+        ["<C-K>"] = { "select_prev", "fallback" },
+      },
     },
 
     keymap = {
       preset = "enter",
-      ["<C-y>"] = { "select_and_accept" },
-      ["<C-J>"] = { "select_next", "fallback" },
-      ["<C-K>"] = { "select_prev", "fallback" },
+      ["<C-Y>"] = { "select_and_accept" },
+      ["<C-j>"] = { "select_next", "fallback" },
+      ["<C-k>"] = { "select_prev", "fallback" },
     },
   },
 }
